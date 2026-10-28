@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Mahasiswa - Cloud Computing</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #0a0a0f, #1a1625);
+            color: #f5f3ff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 18px;
+            padding: 32px;
+            max-width: 480px;
+            width: 100%;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            text-align: center;
+        }
+        .avatar {
+            width: 88px; height: 88px;
+            border-radius: 50%;
+            background: #a78bfa;
+            color: #1e1b4b;
+            font-size: 36px;
+            font-weight: bold;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px;
+        }
+        h1 { font-size: 24px; margin-bottom: 4px; }
+        .nim { color: #c4b5fd; margin-bottom: 16px; }
+        .badge {
+            display: inline-block;
+            background: #22c55e;
+            color: #052e16;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 999px;
+            margin-bottom: 20px;
+        }
+        ul { list-style: none; text-align: left; margin: 0 auto 20px; }
+        li {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 10px 14px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+        }
+        li:last-child { margin-bottom: 0; }
+        .btn {
+            padding: 10px 22px;
+            border: none;
+            border-radius: 10px;
+            background: #a78bfa;
+            color: #1e1b4b;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .btn:hover { background: #c4b5fd; }
+        #counter { margin-top: 12px; font-size: 14px; color: #ddd6fe; }
+        footer { margin-top: 20px; font-size: 13px; color: #c4b5fd; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="avatar">NM</div>
+        <h1>Muhammad Hasyim Syahputra</h1>
+        <p class="nim">NIM: 102042400037 &middot; Sistem Informasi</p>
+        <span class="badge">Versi 1.0 &middot; Deploy di Vercel</span>
+
+        <ul>
+            <li>☁️ Praktikum Cloud Computing - Modul 01</li>
+        </ul>
+
+        <button class="btn" onclick="tambah()">Klik Saya</button>
+        <p id="counter">Tombol sudah diklik 0 kali</p>
+
+        <footer id="time"></footer>
+    </div>
+
+    <script>
+        let jumlah = 0;
+        function tambah() {
+            jumlah++;
+            document.getElementById("counter").innerText =
+                "Tombol sudah diklik " + jumlah + " kali";
+        }
+
+        function updateTime() {
+            document.getElementById("time").innerText =
+                "Waktu sekarang: " + new Date().toLocaleString("id-ID");
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
